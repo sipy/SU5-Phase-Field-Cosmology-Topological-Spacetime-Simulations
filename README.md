@@ -100,7 +100,7 @@ Current limitations include:
 
 This code accompanies the manuscript:
 
-**“Spacetime as an Oscillatory Phase Field: Semiclassical Dynamics, Topological Mass Spectra, and Cosmology in a Gauged SU(5) Prototype”**
+[**“Spacetime as an Oscillatory Phase Field: Semiclassical Dynamics, Topological Mass Spectra, and Cosmology in a Gauged SU(5) Prototype”**](https://drive.google.com/file/d/1lilhGr5TrhsMojbvZNKShBLQ52LQKSEe/view?usp=sharing)
 
 ## Citation
 
