@@ -1,26 +1,45 @@
-# SU(5) Phase-Field Cosmology & Topological Matter Simulations
+# SU(2) Subsector Simulations  
+for the SU(5) Phase-Field Phenomenological Prototype
 
-This repository contains the high-resolution, GPU-accelerated PyTorch tensor simulations supporting the phenomenological framework of spacetime as an oscillatory $SU(5)$ phase field.
+This repository contains the GPU-accelerated PyTorch notebooks that support the phenomenological framework presented in the paper  
+**“Spacetime as an Oscillatory Phase Field: A Phenomenological SU(5) Prototype…”** (TOE (11), dated 23 March 2026).
+
+All simulations are performed exclusively in the **reduced SU(2) ≃ O(4) topological subsector**. They are not full SU(5) dynamics and should be interpreted as numerical evidence for mechanism viability (stabilization, binding, seed formation, and qualitative nuclear analogues), not as proofs of physical reality.
 
 ### Author
-**Simeon Ivaylov Petrov** Team Leader & Web Developer | BSc Computer Science | Sofia, Bulgaria
+**Simeon Ivaylov Petrov**  
+BSc Computer Science, Sofia, Bulgaria
 
-### Overview
-These notebooks utilize PyTorch's `float64` Autograd engine to compute 4th-order spatial finite differences across massive ($128^3$) 3D grids. By evaluating the non-linear sigma model alongside Faddeev-Skyrme geometric stabilization and explicit chiral symmetry breaking ($m_\pi=0.15$), these simulations prove that Derrick's Theorem can be defeated on a discretized lattice, halting vacuum collapse and allowing for the emergence of stable topological matter.
+### Notebooks
 
-### Files
+0. **`0_Kibble-Zurek_Engine.ipynb`**  
+   Simulates the 3D post-inflationary quench on a 128³ lattice. Demonstrates domain-wall formation, coarsening, and the spontaneous emergence of localized regions carrying nontrivial winding (supporting the Kibble–Zurek-type seed-formation scenario in the paper).
 
-0. **`0_Kibble-Zurek_Engine.ipynb`** **The Genesis Event.** This notebook simulates the 3D Kibble-Zurek quench on the GPU. It initializes a random high-entropy phase field (inflationary fluctuations) and executes a potential quench, demonstrating how primordial topological complexity ($\mathcal{B} \approx 7600$) spontaneously collapses and crystallizes into a discrete number of stable matter seeds ($\mathcal{B} \approx 5$).
+1. **`1_B1_Particle_Crystallization.ipynb`**  
+   Evolves a single B ≈ 1 hedgehog seed under constrained gradient flow. Shows stabilization of a localized topological defect at a nonzero rest-mass plateau while preserving winding number (illustrating how the fourth-order Skyrme term can overcome Derrick’s theorem in the lattice discretization).
 
-1. **`1_B1_Particle_Crystallization.ipynb`** Demonstrates the stabilization of a single $B=1$ topological seed into a massive fundamental fermion (Proton/Lepton prototype) with a stable rest-mass plateau ($E_{rest} \approx 7.24$).
+2. **`2_DT_Nuclear_Fusion.ipynb`**  
+   Merges B = 2 and B = 3 configurations via stereographic product ansatz. Exhibits energy relaxation and spontaneous reorganization of the unstable intermediate into a more stable remnant plus emitted fragment (qualitative analogue of D–T fusion).
 
-2. **`2_DT_Nuclear_Fusion.ipynb`** Demonstrates the stereographic merging of $B=2$ (Deuterium) and $B=3$ (Tritium) seeds. The simulation natively captures the strong force energy drop and the geometric decay of the unstable $B=5$ intermediate into a stable $B=4$ Alpha particle and a fast $B=1$ neutron.
+3. **`3_Heavy_Nuclei_Crystallization.ipynb`**  
+   Explores higher-charge states. By tuning the effective pion mass and Skyrme coefficient, a B = 7 configuration can be stabilized for extended relaxation time, indicating a stability window for heavier polyhedral configurations.
 
-3. **`3_Heavy_Nuclei_Crystallization.ipynb`** Explores the "Stability Window" for higher-order topological charge. This notebook demonstrates how a $B=7$ (Lithium/Beryllium) seed can be stabilized into a symmetric polyhedral (Platonic) manifold by tuning vacuum pressure ($m_\pi$) and Skyrme repulsion ($e$), preventing lattice evaporation.
+4. **`4_Matter_Antimatter_Annihilation.ipynb`**  
+   Collides a B = 1 seed with a B = −1 seed. Demonstrates topological charge cancellation to numerical precision and conversion of rest energy into high-frequency field oscillations (consistency check for matter–antimatter behaviour in the reduced model).
 
-4. **`4_Matter_Antimatter_Annihilation.ipynb`** Evaluates CPT-invariance and topological conservation laws. This experiment simulates the collision of $B=1$ and $B=-1$ seeds, resulting in perfect topological cancellation ($\Delta B < 10^{-5}$) and the conversion of rest-mass energy into high-frequency phase oscillations (radiation).
+### Usage Instructions
+- Run directly in **Google Colab** (T4 GPU or better recommended).  
+- Use `torch.float64` precision (already set in the notebooks).  
+- **Important**: Due to high VRAM usage on 128³ grids, restart the Colab session between notebooks to clear the GPU cache.
 
-### Usage
-These notebooks are designed to be run directly in Google Colab using a T4 GPU (or higher) with at least 16GB of VRAM. To ensure accuracy, the environment is strictly set to `torch.float64`. 
+### Relation to the Paper
+These notebooks provide the numerical backbone for Sections IV, VII–IX of TOE (11). All results are described qualitatively in the paper; the notebooks allow anyone to reproduce and extend the simulations.
 
-*Note: Due to high VRAM usage, it is recommended to "Restart Session" in Colab between running different notebooks to clear the GPU cache.*
+The framework remains phenomenological. Full SU(5) dynamics, first-principles derivation of the macroscopic potential, and a realistic particle spectrum are left for future work (see Section X of the paper for a detailed discussion of scope and limitations).
+
+**Paper (latest version):**  
+[TOE (11) PDF](https://github.com/sipy/su5-phase-field/blob/main/TOE_(11).pdf) *(or the version linked in the arXiv preprint if uploaded)*
+
+---
+
+Last updated: 23 March 2026
