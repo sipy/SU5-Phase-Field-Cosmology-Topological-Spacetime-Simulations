@@ -108,6 +108,4 @@ If you use or discuss this repository, please cite the associated manuscript and
 
 ## License
 
-Add your preferred license here, for example:
-
-`MIT`, `Apache-2.0`, or `All rights reserved`
+All rights reserved
